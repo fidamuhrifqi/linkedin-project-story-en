@@ -37,18 +37,50 @@ It also prevents a common mistake: presenting someone else's open-source project
 
 ## Installation
 
-### Codex
+### Skills CLI
 
-You do not need to clone the entire repository.
+Install directly from GitHub with the open-source Skills CLI:
 
-Ask Codex to install the skill directly from GitHub:
+```bash
+npx skills add fidamuhrifqi/linkedin-project-story-en
+```
+
+To install it globally for Codex without interactive prompts:
+
+```bash
+npx skills add fidamuhrifqi/linkedin-project-story-en \
+  --skill linkedin-project-story-en \
+  --global \
+  --agent codex \
+  --yes
+```
+
+Windows PowerShell users can run the same command. If PowerShell blocks `npx.ps1`, use `npx.cmd`:
+
+```powershell
+npx.cmd skills add fidamuhrifqi/linkedin-project-story-en
+```
+
+The repository has been tested with:
+
+```bash
+npx skills add fidamuhrifqi/linkedin-project-story-en --list
+```
+
+The CLI detects one available skill: `linkedin-project-story-en`.
+
+Restart or reload your agent after installation.
+
+### Codex Built-In Installer
+
+You do not need to clone the entire repository. Ask Codex:
 
 ```text
 Install this skill:
 https://github.com/fidamuhrifqi/linkedin-project-story-en/tree/main/linkedin-project-story-en
 ```
 
-Codex can use its built-in skill installer to download the skill into the local skills directory. Restart Codex after installation so the new skill is discovered.
+Codex can use its built-in skill installer to download the skill into the local skills directory.
 
 You can also run the built-in installer manually.
 
