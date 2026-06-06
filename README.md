@@ -39,25 +39,53 @@ It also prevents a common mistake: presenting someone else's open-source project
 
 ### Codex
 
-Clone this repository, then copy the skill folder into your Codex skills directory.
+You do not need to clone the entire repository.
+
+Ask Codex to install the skill directly from GitHub:
+
+```text
+Install this skill:
+https://github.com/fidamuhrifqi/linkedin-project-story-en/tree/main/linkedin-project-story-en
+```
+
+Codex can use its built-in skill installer to download the skill into the local skills directory. Restart Codex after installation so the new skill is discovered.
+
+You can also run the built-in installer manually.
 
 macOS or Linux:
 
 ```bash
-git clone <repository-url> linkedin-project-story-en-repo
-mkdir -p ~/.codex/skills
-cp -R linkedin-project-story-en-repo/linkedin-project-story-en ~/.codex/skills/
+python ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo fidamuhrifqi/linkedin-project-story-en \
+  --path linkedin-project-story-en
 ```
 
 Windows PowerShell:
 
 ```powershell
-git clone <repository-url> linkedin-project-story-en-repo
-New-Item -ItemType Directory -Force "$HOME\.codex\skills" | Out-Null
-Copy-Item -Recurse "linkedin-project-story-en-repo\linkedin-project-story-en" "$HOME\.codex\skills\"
+python "$HOME\.codex\skills\.system\skill-installer\scripts\install-skill-from-github.py" `
+  --repo fidamuhrifqi/linkedin-project-story-en `
+  --path linkedin-project-story-en
 ```
 
-Restart or reload your agent session after installation if the skill is not discovered immediately.
+The installer downloads only the skill folder and places it under `$CODEX_HOME/skills` or `~/.codex/skills`.
+
+### Manual Installation
+
+If the built-in installer is unavailable, download the repository ZIP or clone it, then copy only the `linkedin-project-story-en` folder into your Codex skills directory:
+
+```bash
+git clone https://github.com/fidamuhrifqi/linkedin-project-story-en.git
+cp -R linkedin-project-story-en/linkedin-project-story-en ~/.codex/skills/
+```
+
+On Windows, the default destination is:
+
+```text
+%USERPROFILE%\.codex\skills\linkedin-project-story-en
+```
+
+Restart or reload Codex after manual installation.
 
 ### Other Skill-Compatible Agents
 
