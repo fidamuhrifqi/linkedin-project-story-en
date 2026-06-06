@@ -1,0 +1,4 @@
+interface:
+  display_name: "LinkedIn Project Story EN"
+  short_description: "English repo-review posts and visuals"
+  default_prompt: "Use $linkedin-project-story-en to review this GitHub repo from a user/reviewer POV and create an English LinkedIn post with an animated-image concept."
